@@ -34,22 +34,26 @@ int main()
   } else
   {
     discriminant = findDiscriminant(a, b, c); 
-    printf("Дискриминат равен: %.3f \n", discriminant);
 
     if (discriminant < 0)
-      printf("Нет решений");
-    else if (discriminant == 0)
     {
+      printf("Дискриминат отрицательный\n");
+      printf("Нет решений");
+    } else if (discriminant == 0)
+    {
+      printf("Дискриминант равен нулю\n");
       printf("Одно решение: x = %.3f", (-b/2.0)/a);
     } else 
       {
       float x1;
       float x2;
 
+      printf("Дискриминант равен: %f\n", discriminant);
+
       x1 = (-b + sqrt(discriminant)) / 2.0 / a; 
       x2 = (-b - sqrt(discriminant)) / 2.0 / a;
 
-      printf("Уравнение имеет два решения: х1 = %.3f, x2 = %.3f", x1, x2);
+      printf("Уравнение имеет два решения: х1 = %.3f, x2 = %.3f\n", x1, x2);
       }
   }
   
