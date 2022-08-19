@@ -6,7 +6,7 @@ double findDiscriminant(int a, int b, int c)
   return b * b - 4 * a * c; 
 }
 
-float* input()
+float* coefficentReading()
 {
   double a = NAN;
   double b = NAN;
