@@ -2,7 +2,8 @@
 #include <math.h>
 
 
-struct Coefficents {
+struct Coefficents 
+{
   double a;
   double b;
   double c;
