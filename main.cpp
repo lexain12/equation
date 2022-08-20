@@ -1,45 +1,49 @@
 #include <stdio.h>
 #include <math.h>
 
-double findDiscriminant(int a, int b, int c)
+
+struct Coefficents {
+  double a;
+  double b;
+  double c;
+};
+
+struct Solution
 {
-  return b * b - 4 * a * c; 
+  double x1;
+  double x2;
+  int numberOfRoots;
+};
+
+double findDiscriminant(Coefficents *coefficents)
+{
+  return coefficents->b * coefficents->b - 4 * coefficents->a * coefficents->c;
 }
 
-float* coefficentReading()
+void coefficentReading(Coefficents *coefficents)
 {
-  double a = NAN;
-  double b = NAN;
-  double c = NAN;
-
   printf("Введите коэфиценты уравнения a*x^2 + b*x + c = 0\n");
-  scanf("%f %f %f", &a, &b, &c); 
+  scanf("%lf %lf %lf", &coefficents->a, &coefficents->b, &coefficents->c);
 
-  float *arg = (float*)malloc(sizeof(float)*3);
-
-  arg[0] = a;
-  arg[1] = b;
-  arg[2] = c;
-
-  return arg; 
+  return;
 }
 
-void linealEquation(double b, double c)
+void linealEquation(Coefficents *coefficents)
 {
-    if (b == 0)
+    if (coefficents->b == 0)
     {
-      if (c == 0)
+      if (coefficents->c == 0)
         printf("Бесконечное множество корней\n");
       else
         printf("Корней нет\n");
     }
     else
-      printf("Единственный корень: x = %.3f\n", -c / b);  
+      printf("Единственный корень: x = %.3f\n", -(coefficents->c) / coefficents->b);
 }
 
-void quadraticEquation(double a, double b, double c)
+void quadraticEquation(Coefficents *coefficents)
 {
-    double discriminant = findDiscriminant(a, b, c); 
+    double discriminant = findDiscriminant(coefficents);
 
     if (discriminant < 0)
     {
@@ -49,9 +53,9 @@ void quadraticEquation(double a, double b, double c)
     else if (discriminant == 0)
     {
       printf("Дискриминант равен нулю\n");
-      printf("Одно решение: x = %.3f", -b / (2 * a));
+      printf("Одно решение: x = %.3f", -(coefficents->b) / (2 * coefficents->a));
     }
-    else 
+    else
     {
 
     double x1 = NAN;
@@ -59,8 +63,8 @@ void quadraticEquation(double a, double b, double c)
 
     printf("Дискриминант равен: %f\n", sqrt(discriminant));
 
-    x1 = (-b + sqrt(discriminant)) / (2 * a); 
-    x2 = (-b - sqrt(discriminant)) / (2 * a);
+    x1 = (-(coefficents->b) + sqrt(discriminant)) / (2 * coefficents->a);
+    x2 = (-(coefficents->b) - sqrt(discriminant)) / (2 * coefficents->a);
 
     printf("Уравнение имеет два решения: х1 = %.3f, x2 = %.3f\n", x1, x2);
     }
@@ -68,30 +72,19 @@ void quadraticEquation(double a, double b, double c)
 
 int main()
 {
-  double a = NAN;
-  double b = NAN;
-  double c = NAN;
-  double discriminant = NAN;
-  float* arg = NULL;
+  Coefficents coefficents = {};
 
-  
-  arg = input();
-  a = arg[0];
-  b = arg[1];
-  c = arg[2];
+  coefficentReading(&coefficents);
 
-  free(arg);
-
-
-  if (a == 0)
+  if (coefficents.a == 0)
   {
-    linealEquation(b, c);
-  } 
+    linealEquation(&coefficents);
+  }
   else
   {
-    quadraticEquation(a, b, c);
+    quadraticEquation(&coefficents);
   }
-  
+
   return 0;
 }
 
