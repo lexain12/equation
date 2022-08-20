@@ -38,35 +38,44 @@ void linealEquation(Coefficents *coefficents, Solution *solution)
       else
         solution->numberOfRoots = 0;
     }
-    else
+    else 
+    {
       solution->numberOfRoots = 1;
       solution->x1 = -(coefficents->c) / coefficents->b;
+    }
 }
 
 void quadraticEquation(Coefficents *coefficents, Solution *solution)
 {
-    double discriminant = findDiscriminant(coefficents);
+  if (coefficents.a == 0)
+  {
+    linealEquation(&coefficents, &solution);
+    return;
+  }
 
-    if (discriminant < 0)
-    {
-      solution->numberOfRoots = 0;
-    }
-    else if (discriminant == 0)
-    {
-      solution->numberOfRoots = 1;
-      solution->x1 = -(coefficents->b) / (2 * coefficents->a);
-    }
-    else
-    {
-    solution->x1 = (-(coefficents->b) + sqrt(discriminant)) / (2 * coefficents->a);
-    solution->x2 = (-(coefficents->b) - sqrt(discriminant)) / (2 * coefficents->a);
-    solution->numberOfRoots = 2;
-    }
+  double discriminant = findDiscriminant(coefficents);
+
+  if (discriminant < 0)
+  {
+    solution->numberOfRoots = 0;
+  }
+  else if (discriminant == 0)
+  {
+    solution->numberOfRoots = 1;
+    solution->x1 = -(coefficents->b) / (2 * coefficents->a);
+  }
+  else
+  {
+  solution->x1 = (-(coefficents->b) + sqrt(discriminant)) / (2 * coefficents->a);
+  solution->x2 = (-(coefficents->b) - sqrt(discriminant)) / (2 * coefficents->a);
+  solution->numberOfRoots = 2;
+  }
 }
 
 void answerOutput(Solution *solution)
 {
-  switch (solution->numberOfRoots){
+  switch (solution->numberOfRoots)
+  {
     case 0:
       printf("This equation has zero roots\n");
       break;
@@ -79,7 +88,8 @@ void answerOutput(Solution *solution)
     case -1:
       printf("This equation has infinite number of roots\n");
       break;
-    default:;
+    default:
+      fprintf(stderr, "Error: undefined solution");
   }
 }
 
@@ -90,14 +100,7 @@ int main()
 
   coefficentReading(&coefficents);
 
-  if (coefficents.a == 0)
-  {
-    linealEquation(&coefficents, &solution);
-  }
-  else
-  {
-    quadraticEquation(&coefficents, &solution);
-  }
+  quadraticEquation();
 
   answerOutput(&solution);
 
