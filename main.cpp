@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <math.h>
+#include "equation.h"
 
-
-struct Coefficents 
+int main()
 {
-  double a;
-  double b;
-  double c;
-};
+  Coefficents coefficents;
+  Solution solution;
 
-struct Solution
-{
-  double x1;
-  double x2;
-  int numberOfRoots;
-};
+  coefficentReading(&coefficents);
+
+  quadraticEquation(&coefficents, &solution);
+
+  answerOutput(&solution);
+
+  return 0;
+}
 
 double findDiscriminant(Coefficents *coefficents)
 {
@@ -34,22 +34,22 @@ void linealEquation(Coefficents *coefficents, Solution *solution)
     if (coefficents->b == 0)
     {
       if (coefficents->c == 0)
-        solution->numberOfRoots = -1;
+        solution->numberOfRoots = infRoots;
       else
-        solution->numberOfRoots = 0;
+        solution->numberOfRoots = noRoots;
     }
     else 
     {
-      solution->numberOfRoots = 1;
+      solution->numberOfRoots = oneRoot;
       solution->x1 = -(coefficents->c) / coefficents->b;
     }
 }
 
 void quadraticEquation(Coefficents *coefficents, Solution *solution)
 {
-  if (coefficents.a == 0)
+  if (coefficents->a == 0)
   {
-    linealEquation(&coefficents, &solution);
+    linealEquation(coefficents, solution);
     return;
   }
 
@@ -57,18 +57,18 @@ void quadraticEquation(Coefficents *coefficents, Solution *solution)
 
   if (discriminant < 0)
   {
-    solution->numberOfRoots = 0;
+    solution->numberOfRoots = noRoots;
   }
   else if (discriminant == 0)
   {
-    solution->numberOfRoots = 1;
+    solution->numberOfRoots = oneRoot;
     solution->x1 = -(coefficents->b) / (2 * coefficents->a);
   }
-  else
+  else if (discriminant > 0)
   {
   solution->x1 = (-(coefficents->b) + sqrt(discriminant)) / (2 * coefficents->a);
   solution->x2 = (-(coefficents->b) - sqrt(discriminant)) / (2 * coefficents->a);
-  solution->numberOfRoots = 2;
+  solution->numberOfRoots = twoRoots;
   }
 }
 
@@ -89,21 +89,7 @@ void answerOutput(Solution *solution)
       printf("This equation has infinite number of roots\n");
       break;
     default:
-      fprintf(stderr, "Error: undefined solution");
+      fprintf(stderr, "Error: wrong input\n");
   }
-}
-
-int main()
-{
-  Coefficents coefficents = {};
-  Solution solution = {};
-
-  coefficentReading(&coefficents);
-
-  quadraticEquation();
-
-  answerOutput(&solution);
-
-  return 0;
 }
 
