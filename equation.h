@@ -24,6 +24,8 @@ struct Solution
   NumberOfRoots numberOfRoots = defaultValue;
 };
 
+const double eps = 1e-10;
+
 double findDiscriminant(Coefficents *coefficents);
 
 void coefficentReading(Coefficents *coefficents);

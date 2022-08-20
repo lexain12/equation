@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+
 #include "equation.h"
 
 int main()
@@ -31,9 +32,9 @@ void coefficentReading(Coefficents *coefficents)
 
 void linealEquation(Coefficents *coefficents, Solution *solution)
 {
-    if (coefficents->b == 0)
+    if (fabs(coefficents->b) < eps)
     {
-      if (coefficents->c == 0)
+      if (fabs(coefficents->c) < eps)
         solution->numberOfRoots = infRoots;
       else
         solution->numberOfRoots = noRoots;
@@ -47,7 +48,7 @@ void linealEquation(Coefficents *coefficents, Solution *solution)
 
 void quadraticEquation(Coefficents *coefficents, Solution *solution)
 {
-  if (coefficents->a == 0)
+  if (fabs(coefficents->a) < eps)
   {
     linealEquation(coefficents, solution);
     return;
@@ -59,7 +60,7 @@ void quadraticEquation(Coefficents *coefficents, Solution *solution)
   {
     solution->numberOfRoots = noRoots;
   }
-  else if (discriminant == 0)
+  else if (fabs(discriminant) < eps)
   {
     solution->numberOfRoots = oneRoot;
     solution->x1 = -(coefficents->b) / (2 * coefficents->a);
