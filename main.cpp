@@ -58,10 +58,8 @@ void quadraticEquation(Coefficents *coefficents, Solution *solution)
     }
     else
     {
-
     solution->x1 = (-(coefficents->b) + sqrt(discriminant)) / (2 * coefficents->a);
     solution->x2 = (-(coefficents->b) - sqrt(discriminant)) / (2 * coefficents->a);
-
     solution->numberOfRoots = 2;
     }
 }
@@ -79,7 +77,7 @@ void answerOutput(Solution *solution)
       printf("This equation has 2 roots x1 = %.3lf  x2 = %.3lf\n", solution->x1, solution->x2); 
       break;
     case -1:
-      printf("This equation has infinite number of roots");
+      printf("This equation has infinite number of roots\n");
       break;
     default:;
   }
