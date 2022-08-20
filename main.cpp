@@ -29,62 +29,79 @@ void coefficentReading(Coefficents *coefficents)
   return;
 }
 
-void linealEquation(Coefficents *coefficents)
+void linealEquation(Coefficents *coefficents, Solution *solution)
 {
     if (coefficents->b == 0)
     {
       if (coefficents->c == 0)
-        printf("Бесконечное множество корней\n");
+        solution->numberOfRoots = -1;
       else
-        printf("Корней нет\n");
+        solution->numberOfRoots = 0;
     }
     else
-      printf("Единственный корень: x = %.3f\n", -(coefficents->c) / coefficents->b);
+      solution->numberOfRoots = 1;
+      solution->x1 = -(coefficents->c) / coefficents->b;
 }
 
-void quadraticEquation(Coefficents *coefficents)
+void quadraticEquation(Coefficents *coefficents, Solution *solution)
 {
     double discriminant = findDiscriminant(coefficents);
 
     if (discriminant < 0)
     {
-      printf("Дискриминат отрицательный\n");
-      printf("Нет решений\n");
+      solution->numberOfRoots = 0;
     }
     else if (discriminant == 0)
     {
-      printf("Дискриминант равен нулю\n");
-      printf("Одно решение: x = %.3f", -(coefficents->b) / (2 * coefficents->a));
+      solution->numberOfRoots = 1;
+      solution->x1 = -(coefficents->b) / (2 * coefficents->a);
     }
     else
     {
 
-    double x1 = NAN;
-    double x2 = NAN;
+    solution->x1 = (-(coefficents->b) + sqrt(discriminant)) / (2 * coefficents->a);
+    solution->x2 = (-(coefficents->b) - sqrt(discriminant)) / (2 * coefficents->a);
 
-    printf("Дискриминант равен: %f\n", sqrt(discriminant));
-
-    x1 = (-(coefficents->b) + sqrt(discriminant)) / (2 * coefficents->a);
-    x2 = (-(coefficents->b) - sqrt(discriminant)) / (2 * coefficents->a);
-
-    printf("Уравнение имеет два решения: х1 = %.3f, x2 = %.3f\n", x1, x2);
+    solution->numberOfRoots = 2;
     }
+}
+
+void answerOutput(Solution *solution)
+{
+  switch (solution->numberOfRoots){
+    case 0:
+      printf("This equation has zero roots\n");
+      break;
+    case 1:
+      printf("This equation has 1 root x = %.3lf\n", solution->x1);
+      break;
+    case 2:
+      printf("This equation has 2 roots x1 = %.3lf  x2 = %.3lf\n", solution->x1, solution->x2); 
+      break;
+    case -1:
+      printf("This equation has infinite number of roots");
+      break;
+    default:;
+  }
 }
 
 int main()
 {
   Coefficents coefficents = {};
+  Solution solution = {};
 
   coefficentReading(&coefficents);
 
   if (coefficents.a == 0)
   {
-    linealEquation(&coefficents);
+    linealEquation(&coefficents, &solution);
   }
   else
   {
-    quadraticEquation(&coefficents);
+    quadraticEquation(&coefficents, &solution);
   }
+
+  answerOutput(&solution);
 
   return 0;
 }
