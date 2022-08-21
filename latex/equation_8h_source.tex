@@ -1,0 +1,43 @@
+\hypertarget{equation_8h_source}{}\doxysection{equation.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{5 \textcolor{keyword}{enum} NumberOfRoots}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7   noRoots   = 0,}
+\DoxyCodeLine{8   oneRoot   = 1,}
+\DoxyCodeLine{9   twoRoots  = 2,}
+\DoxyCodeLine{10   infRoots = -\/1,}
+\DoxyCodeLine{11 \};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{14 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_coefficents}{Coefficents}} }
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a53089901d0b6711c251379e714908111}{a}} = NAN;}
+\DoxyCodeLine{17   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a7641104bb9b78b35a57356fd02b05fbc}{b}} = NAN;}
+\DoxyCodeLine{18   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a52926fc90f1ac883e2b5de9fb1c8233d}{c}} = NAN;}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_solution}{Solution}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_solution_af969d941ce8de36541665b00dc14a800}{x1}} = NAN;}
+\DoxyCodeLine{25   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_solution_a3424c236d2f9f3d98762ad7644acc542}{x2}} = NAN;}
+\DoxyCodeLine{26   NumberOfRoots \mbox{\hyperlink{struct_solution_aad96084f895e3b9dbc1b68aed736d9e7}{numberOfRoots}} = noRoots;}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{const} \textcolor{keywordtype}{double} eps = 1e-\/10;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{36 \textcolor{keywordtype}{bool} isZero(\textcolor{keywordtype}{double} number);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{43 \textcolor{keywordtype}{double} findDiscriminant(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keywordtype}{void} coefficentReading(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} linealEquation(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents, \mbox{\hyperlink{struct_solution}{Solution}} *solution);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} quadraticEquation(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents, \mbox{\hyperlink{struct_solution}{Solution}} *solution);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{keywordtype}{void} answerOutput(\mbox{\hyperlink{struct_solution}{Solution}} *solution);}
+
+\end{DoxyCode}
