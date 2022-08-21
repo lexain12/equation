@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <math.h>
+#include <assert.h>
 
 #include "equation.h"
 
 int main()
 {
-  Coefficents coefficents;
-  Solution solution;
+  Coefficents coefficents = {};
+ coefficentReading(&coefficents);
 
-  coefficentReading(&coefficents);
-
+  Solution solution = {};
   quadraticEquation(&coefficents, &solution);
 
   answerOutput(&solution);
@@ -19,22 +19,48 @@ int main()
 
 double findDiscriminant(Coefficents *coefficents)
 {
+  assert(coefficents != NULL); 
+
   return coefficents->b * coefficents->b - 4 * coefficents->a * coefficents->c;
+}
+
+bool isZero(double number)
+{
+  return fabs(number) < eps;
 }
 
 void coefficentReading(Coefficents *coefficents)
 {
+  assert(coefficents != NULL);
+
   printf("Введите коэфиценты уравнения a*x^2 + b*x + c = 0\n");
   scanf("%lf %lf %lf", &coefficents->a, &coefficents->b, &coefficents->c);
+
+  for (int i = 0; i < 5; i++)
+  {
+    if (isnan(coefficents->a) || isnan(coefficents->b) || isnan(coefficents->c))
+    {
+      printf("Неверный ввод, введите коэфиценты еще раз\n"); 
+      fflush(stdin);
+      scanf("%lf %lf %lf\n", &coefficents->a, &coefficents->b, &coefficents->c);
+    }
+    else
+      return;
+  }
+  printf("You're annoying\n");
+  exit(EXIT_FAILURE);
 
   return;
 }
 
 void linealEquation(Coefficents *coefficents, Solution *solution)
 {
-    if (fabs(coefficents->b) < eps)
+  assert(coefficents != NULL);
+  assert(solution != NULL);
+
+    if (isZero(coefficents->b))
     {
-      if (fabs(coefficents->c) < eps)
+      if (isZero(coefficents->c))
         solution->numberOfRoots = infRoots;
       else
         solution->numberOfRoots = noRoots;
@@ -48,7 +74,10 @@ void linealEquation(Coefficents *coefficents, Solution *solution)
 
 void quadraticEquation(Coefficents *coefficents, Solution *solution)
 {
-  if (fabs(coefficents->a) < eps)
+  assert(coefficents != NULL);
+  assert(solution != NULL);
+
+  if (isZero(coefficents->a))
   {
     linealEquation(coefficents, solution);
     return;
@@ -56,11 +85,11 @@ void quadraticEquation(Coefficents *coefficents, Solution *solution)
 
   double discriminant = findDiscriminant(coefficents);
 
-  if (discriminant < 0)
+  if (isZero(discriminant))
   {
     solution->numberOfRoots = noRoots;
   }
-  else if (fabs(discriminant) < eps)
+  else if (discriminant < 0)
   {
     solution->numberOfRoots = oneRoot;
     solution->x1 = -(coefficents->b) / (2 * coefficents->a);
@@ -75,6 +104,8 @@ void quadraticEquation(Coefficents *coefficents, Solution *solution)
 
 void answerOutput(Solution *solution)
 {
+  assert(solution != NULL);
+
   switch (solution->numberOfRoots)
   {
     case 0:

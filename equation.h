@@ -7,7 +7,6 @@ enum NumberOfRoots
   oneRoot   = 1,
   twoRoots  = 2,
   infRoots = -1,
-  defaultValue = 3,
 };
 
 struct Coefficents 
@@ -21,10 +20,12 @@ struct Solution
 {
   double x1 = NAN;
   double x2 = NAN;
-  NumberOfRoots numberOfRoots = defaultValue;
+  NumberOfRoots numberOfRoots = noRoots;
 };
 
 const double eps = 1e-10;
+
+bool isZero(double number);
 
 double findDiscriminant(Coefficents *coefficents);
 
