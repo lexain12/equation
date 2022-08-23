@@ -1,24 +1,36 @@
 var indexSectionsWithContent =
 {
-  0: "abcenqsx",
+  0: "abcdefilmnopqrstx",
   1: "ces",
-  2: "abcnx",
-  3: "q"
+  2: "emrt",
+  3: "acdfilmpq",
+  4: "abcenx",
+  5: "en",
+  6: "inost",
+  7: "q"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "variables",
-  3: "pages"
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "enums",
+  6: "enumvalues",
+  7: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Variables",
-  3: "Pages"
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Enumerations",
+  6: "Enumerator",
+  7: "Pages"
 };
 

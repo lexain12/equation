@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['x1_0',['x1',['../struct_solution.html#af969d941ce8de36541665b00dc14a800',1,'Solution']]],
-  ['x2_1',['x2',['../struct_solution.html#a3424c236d2f9f3d98762ad7644acc542',1,'Solution']]]
+  ['numberofroots_0',['numberOfRoots',['../struct_solution.html#aad96084f895e3b9dbc1b68aed736d9e7',1,'Solution']]]
 ];
