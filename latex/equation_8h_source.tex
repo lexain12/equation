@@ -2,53 +2,52 @@
 \mbox{\hyperlink{equation_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include <stdio.h>}}
-\DoxyCodeLine{2 }
-\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <math.h>}}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{6 \textcolor{keyword}{enum} \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8f}{NumberOfRoots}}}
-\DoxyCodeLine{7 \{}
-\DoxyCodeLine{8   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fa8114e3fb87a9939906a81b6406f492fa}{noRoots}}   = 0,}
-\DoxyCodeLine{9   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fac73256ab8a96bd2ae8a6977e170e65fb}{oneRoot}}   = 1,}
-\DoxyCodeLine{10   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fa3bb53df56070b8c20dc945edcd985c3d}{twoRoots}}  = 2,}
-\DoxyCodeLine{11   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fa8efd8495a1efdd0dcef224e3fd57e940}{infRoots}} = -\/1,}
-\DoxyCodeLine{12 \};}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{15 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_coefficents}{Coefficents}} }
-\DoxyCodeLine{16 \{}
-\DoxyCodeLine{17   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a53089901d0b6711c251379e714908111}{a}} = NAN;}
-\DoxyCodeLine{18   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a7641104bb9b78b35a57356fd02b05fbc}{b}} = NAN;}
-\DoxyCodeLine{19   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a52926fc90f1ac883e2b5de9fb1c8233d}{c}} = NAN;}
-\DoxyCodeLine{20 \};}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{23 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_solution}{Solution}}}
-\DoxyCodeLine{24 \{}
-\DoxyCodeLine{25   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_solution_af969d941ce8de36541665b00dc14a800}{x1}} = NAN;}
-\DoxyCodeLine{26   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_solution_a3424c236d2f9f3d98762ad7644acc542}{x2}} = NAN;}
-\DoxyCodeLine{27   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8f}{NumberOfRoots}} \mbox{\hyperlink{struct_solution_aad96084f895e3b9dbc1b68aed736d9e7}{numberOfRoots}} = \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fa8114e3fb87a9939906a81b6406f492fa}{noRoots}};}
-\DoxyCodeLine{28 \};}
-\DoxyCodeLine{30 \textcolor{keyword}{enum} \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76b}{Errors}} }
-\DoxyCodeLine{31 \{}
-\DoxyCodeLine{32   \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76ba81dac98fc6789e09a2076ce78e8f4ed7}{noErrors}}    = 0,}
-\DoxyCodeLine{33   \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76ba9385faed919b3ae160f18d3206566f60}{inputError}}  = 1,}
-\DoxyCodeLine{34   \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76baba6993371644a73efb5fb7d75e42d818}{solveError}}  = 2,}
-\DoxyCodeLine{35   \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76ba1c2d926cbe61428712be98ef558576ee}{outputError}} = 3,}
-\DoxyCodeLine{36 \};}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{equation_8h_a3d8c24629d725b9ef8c238cf27c9b158}{eps}} = 1e-\/10;}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{5 \textcolor{keyword}{enum} \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8f}{NumberOfRoots}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fa8114e3fb87a9939906a81b6406f492fa}{noRoots}}   = 0,}
+\DoxyCodeLine{8   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fac73256ab8a96bd2ae8a6977e170e65fb}{oneRoot}}   = 1,}
+\DoxyCodeLine{9   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fa3bb53df56070b8c20dc945edcd985c3d}{twoRoots}}  = 2,}
+\DoxyCodeLine{10   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fa8efd8495a1efdd0dcef224e3fd57e940}{infRoots}} = -\/1,}
+\DoxyCodeLine{11 \};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{14 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_coefficents}{Coefficents}} }
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a53089901d0b6711c251379e714908111}{a}} = NAN;}
+\DoxyCodeLine{17   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a7641104bb9b78b35a57356fd02b05fbc}{b}} = NAN;}
+\DoxyCodeLine{18   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_coefficents_a52926fc90f1ac883e2b5de9fb1c8233d}{c}} = NAN;}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_solution}{Solution}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_solution_af969d941ce8de36541665b00dc14a800}{x1}} = NAN;}
+\DoxyCodeLine{25   \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_solution_a3424c236d2f9f3d98762ad7644acc542}{x2}} = NAN;}
+\DoxyCodeLine{26   \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8f}{NumberOfRoots}} \mbox{\hyperlink{struct_solution_aad96084f895e3b9dbc1b68aed736d9e7}{numberOfRoots}} = \mbox{\hyperlink{equation_8h_a4a3fa2132b655aa86d534ff95c287c8fa8114e3fb87a9939906a81b6406f492fa}{noRoots}};}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{29 \textcolor{keyword}{enum} \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76b}{Errors}} }
+\DoxyCodeLine{30 \{}
+\DoxyCodeLine{31   \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76ba81dac98fc6789e09a2076ce78e8f4ed7}{noErrors}}    = 0,}
+\DoxyCodeLine{32   \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76ba9385faed919b3ae160f18d3206566f60}{inputError}}  = 1,}
+\DoxyCodeLine{33   \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76baba6993371644a73efb5fb7d75e42d818}{solveError}}  = 2,}
+\DoxyCodeLine{34   \mbox{\hyperlink{equation_8h_a8fb872c72e116bbd3eba31f48d78e76ba1c2d926cbe61428712be98ef558576ee}{outputError}} = 3,}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{const} \textcolor{keywordtype}{double} \mbox{\hyperlink{equation_8h_a3d8c24629d725b9ef8c238cf27c9b158}{eps}} = 1e-\/10;}
+\DoxyCodeLine{38 }
 \DoxyCodeLine{39 }
-\DoxyCodeLine{40 }
-\DoxyCodeLine{44 \textcolor{keywordtype}{bool} \mbox{\hyperlink{equation_8h_a4d01a36d1a70e0e67b9f99fe6cc99710}{isZero}}(\textcolor{keywordtype}{double} number);}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{48 \textcolor{keywordtype}{void} \mbox{\hyperlink{equation_8h_a804aa5732301017e282bdf577dd0afd7}{printError}}(\textcolor{keywordtype}{int} status);}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{55 \textcolor{keywordtype}{double} \mbox{\hyperlink{equation_8h_a906f6dd503998cf02b22fb070e33e792}{findDiscriminant}}(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents);}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{61 \textcolor{keywordtype}{int} \mbox{\hyperlink{equation_8h_a5d728f0be2913f50f97d80bbceaaf87f}{coefficentReading}}(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents);}
-\DoxyCodeLine{62 }
-\DoxyCodeLine{68 \textcolor{keywordtype}{int} \mbox{\hyperlink{equation_8h_a156a0d6bfc9afc4f2ac1fb8a323a4295}{linealEquation}}(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents, \mbox{\hyperlink{struct_solution}{Solution}} *solution);}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{75 \textcolor{keywordtype}{int} \mbox{\hyperlink{equation_8h_a2cfc20112f75a528602713d0b54afee8}{quadraticEquation}}(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents, \mbox{\hyperlink{struct_solution}{Solution}} *solution);}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{81 \textcolor{keywordtype}{int} \mbox{\hyperlink{equation_8h_aa2eb951c4464199defd2340705761844}{answerOutput}}(\mbox{\hyperlink{struct_solution}{Solution}} *solution);}
+\DoxyCodeLine{43 \textcolor{keywordtype}{bool} \mbox{\hyperlink{equation_8h_a4d01a36d1a70e0e67b9f99fe6cc99710}{isZero}}(\textcolor{keywordtype}{double} number);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} \mbox{\hyperlink{equation_8h_a804aa5732301017e282bdf577dd0afd7}{printError}}(\textcolor{keywordtype}{int} status);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{54 \textcolor{keywordtype}{double} \mbox{\hyperlink{equation_8h_a906f6dd503998cf02b22fb070e33e792}{findDiscriminant}}(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{60 \textcolor{keywordtype}{int} \mbox{\hyperlink{equation_8h_a5d728f0be2913f50f97d80bbceaaf87f}{coefficentReading}}(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{67 \textcolor{keywordtype}{int} \mbox{\hyperlink{equation_8h_a156a0d6bfc9afc4f2ac1fb8a323a4295}{linealEquation}}(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents, \mbox{\hyperlink{struct_solution}{Solution}} *solution);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74 \textcolor{keywordtype}{int} \mbox{\hyperlink{equation_8h_a2cfc20112f75a528602713d0b54afee8}{quadraticEquation}}(\mbox{\hyperlink{struct_coefficents}{Coefficents}} *coefficents, \mbox{\hyperlink{struct_solution}{Solution}} *solution);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{80 \textcolor{keywordtype}{int} \mbox{\hyperlink{equation_8h_aa2eb951c4464199defd2340705761844}{answerOutput}}(\mbox{\hyperlink{struct_solution}{Solution}} *solution);}
 
 \end{DoxyCode}

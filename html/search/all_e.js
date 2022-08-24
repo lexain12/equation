@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['solution_0',['Solution',['../struct_solution.html',1,'']]],
-  ['solveerror_1',['solveError',['../equation_8h.html#a8fb872c72e116bbd3eba31f48d78e76baba6993371644a73efb5fb7d75e42d818',1,'equation.h']]]
+  ['test_0',['Test',['../struct_test.html',1,'']]],
+  ['test_2ecpp_1',['test.cpp',['../test_8cpp.html',1,'']]],
+  ['test_2eh_2',['test.h',['../test_8h.html',1,'']]],
+  ['tworoots_3',['twoRoots',['../equation_8h.html#a4a3fa2132b655aa86d534ff95c287c8fa3bb53df56070b8c20dc945edcd985c3d',1,'equation.h']]]
 ];

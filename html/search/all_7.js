@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linealequation_0',['linealEquation',['../equation_8h.html#a156a0d6bfc9afc4f2ac1fb8a323a4295',1,'linealEquation(Coefficents *coefficents, Solution *solution):&#160;main.cpp'],['../main_8cpp.html#a156a0d6bfc9afc4f2ac1fb8a323a4295',1,'linealEquation(Coefficents *coefficents, Solution *solution):&#160;main.cpp']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]]
 ];

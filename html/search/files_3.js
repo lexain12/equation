@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test_2ecpp_0',['test.cpp',['../test_8cpp.html',1,'']]]
+  ['solve_2ecpp_0',['solve.cpp',['../solve_8cpp.html',1,'']]]
 ];

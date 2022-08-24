@@ -1,0 +1,69 @@
+\hypertarget{utils_8cpp}{}\doxysection{utils.\+cpp File Reference}
+\label{utils_8cpp}\index{utils.cpp@{utils.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}equation.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{utils_8cpp_a804aa5732301017e282bdf577dd0afd7}{print\+Error}} (int status)
+\item 
+bool \mbox{\hyperlink{utils_8cpp_a4d01a36d1a70e0e67b9f99fe6cc99710}{is\+Zero}} (double number)
+\item 
+int \mbox{\hyperlink{utils_8cpp_a5d728f0be2913f50f97d80bbceaaf87f}{coefficent\+Reading}} (\mbox{\hyperlink{struct_coefficents}{Coefficents}} $\ast$coefficents)
+\item 
+int \mbox{\hyperlink{utils_8cpp_aa2eb951c4464199defd2340705761844}{answer\+Output}} (\mbox{\hyperlink{struct_solution}{Solution}} $\ast$solution)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8cpp_aa2eb951c4464199defd2340705761844}\label{utils_8cpp_aa2eb951c4464199defd2340705761844}} 
+\index{utils.cpp@{utils.cpp}!answerOutput@{answerOutput}}
+\index{answerOutput@{answerOutput}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{answerOutput()}{answerOutput()}}
+{\footnotesize\ttfamily int answer\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_solution}{Solution}} $\ast$}]{solution }\end{DoxyParamCaption})}
+
+Function that prints solution in flow ~\newline
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em solution} & structure with roots and number of roots \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8cpp_a5d728f0be2913f50f97d80bbceaaf87f}\label{utils_8cpp_a5d728f0be2913f50f97d80bbceaaf87f}} 
+\index{utils.cpp@{utils.cpp}!coefficentReading@{coefficentReading}}
+\index{coefficentReading@{coefficentReading}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{coefficentReading()}{coefficentReading()}}
+{\footnotesize\ttfamily int coefficent\+Reading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_coefficents}{Coefficents}} $\ast$}]{coefficents }\end{DoxyParamCaption})}
+
+Function that reads coefficent from flow 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em coefficent} & structure with equation coefficents \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8cpp_a4d01a36d1a70e0e67b9f99fe6cc99710}\label{utils_8cpp_a4d01a36d1a70e0e67b9f99fe6cc99710}} 
+\index{utils.cpp@{utils.cpp}!isZero@{isZero}}
+\index{isZero@{isZero}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{isZero()}{isZero()}}
+{\footnotesize\ttfamily bool is\+Zero (\begin{DoxyParamCaption}\item[{double}]{number }\end{DoxyParamCaption})}
+
+Function that compares number with zero 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em number} & number that you want to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if number is zero, false if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8cpp_a804aa5732301017e282bdf577dd0afd7}\label{utils_8cpp_a804aa5732301017e282bdf577dd0afd7}} 
+\index{utils.cpp@{utils.cpp}!printError@{printError}}
+\index{printError@{printError}!utils.cpp@{utils.cpp}}
+\doxysubsubsection{\texorpdfstring{printError()}{printError()}}
+{\footnotesize\ttfamily void print\+Error (\begin{DoxyParamCaption}\item[{int}]{status }\end{DoxyParamCaption})}
+
+Function that prints errors 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em status} & status of programm ~\newline
+ \\
+\hline
+\end{DoxyParams}

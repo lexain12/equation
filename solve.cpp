@@ -19,11 +19,15 @@ int linealEquation(Coefficents *coefficents, Solution *solution)
   {
     if (isZero(coefficents->c))
     {
+      solution->x1 = NAN;
+      solution->x2 = NAN;
       solution->numberOfRoots = infRoots;
       return noErrors;
     }
     else
     {
+      solution->x1 = NAN;
+      solution->x2 = NAN;
       solution->numberOfRoots = noRoots;
       return noErrors;
     }
@@ -32,6 +36,7 @@ int linealEquation(Coefficents *coefficents, Solution *solution)
   {
     solution->numberOfRoots = oneRoot;
     solution->x1 = -(coefficents->c) / coefficents->b;
+    solution->x2 = NAN;
     return noErrors;
   }
   return solveError;
@@ -54,17 +59,21 @@ int quadraticEquation(Coefficents *coefficents, Solution *solution)
   {
     solution->numberOfRoots = oneRoot;
     solution->x1 = -(coefficents->b) / (2 * coefficents->a);
+    solution->x2 = NAN;
     return noErrors;
   }
   else if (discriminant < 0)
   {
+    solution->x1 = NAN;
+    solution->x2 = NAN;
     solution->numberOfRoots = noRoots;
     return noErrors;
   }
   else if (discriminant > 0)
   {
-    solution->x1 = (-(coefficents->b) + sqrt(discriminant)) / (2 * coefficents->a);
-    solution->x2 = (-(coefficents->b) - sqrt(discriminant)) / (2 * coefficents->a);
+    double sqrtDes = sqrt(discriminant);
+    solution->x1 = (-(coefficents->b) - sqrtDes)/ (2 * coefficents->a);
+    solution->x2 = (-(coefficents->b) + sqrtDes) / (2 * coefficents->a);
     solution->numberOfRoots = twoRoots;
     return noErrors;
   }

@@ -1,0 +1,111 @@
+\hypertarget{test_8h}{}\doxysection{test.\+h File Reference}
+\label{test_8h}\index{test.h@{test.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}equation.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_test}{Test}}
+\begin{DoxyCompactList}\small\item\em Structure for tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{test_8h_ab02c24a30cd6d429dc35573432578a40}{are\+Equal}} (double num1, double num2)
+\item 
+bool \mbox{\hyperlink{test_8h_a52d94c5f0adc7696faee1dc6f3b9b272}{check\+Solution}} (\mbox{\hyperlink{struct_solution}{Solution}} correct\+Solution, \mbox{\hyperlink{struct_solution}{Solution}} your\+Solution)
+\item 
+void \mbox{\hyperlink{test_8h_a5e2f11ea62ea8e007d0431e31465bee2}{print\+Test\+Results}} (bool passed, size\+\_\+t test\+Number, \mbox{\hyperlink{struct_solution}{Solution}} my\+Solution, \mbox{\hyperlink{struct_solution}{Solution}} expected\+Solution)
+\item 
+void \mbox{\hyperlink{test_8h_a880b791700b8d6c3bea0e55fee649fde}{equation\+Test}} (\mbox{\hyperlink{struct_test}{Test}} test\mbox{[}$\,$\mbox{]}, size\+\_\+t number\+Of\+Tests)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{test_8h_a53e54caf6eb975dec77f33e016bdb722}{COLOR\+\_\+\+RED}} = \char`\"{}\textbackslash{}033\mbox{[}1;31m\char`\"{}
+\item 
+const char $\ast$ \mbox{\hyperlink{test_8h_a8a6d517e1ab192944bcbd1af463e7efd}{COLOR\+\_\+\+RESET}} = \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+const char $\ast$ \mbox{\hyperlink{test_8h_a4e3254ec413da5406e1746c8428d319b}{COLOR\+\_\+\+GREEN}} = \char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test_8h_ab02c24a30cd6d429dc35573432578a40}\label{test_8h_ab02c24a30cd6d429dc35573432578a40}} 
+\index{test.h@{test.h}!areEqual@{areEqual}}
+\index{areEqual@{areEqual}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{areEqual()}{areEqual()}}
+{\footnotesize\ttfamily bool are\+Equal (\begin{DoxyParamCaption}\item[{double}]{num1,  }\item[{double}]{num2 }\end{DoxyParamCaption})}
+
+Function for checking if two double numbers are equal 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num1} & first number that you want to check \\
+\hline
+\mbox{\texttt{ in}}  & {\em num2} & second number that you want to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool value, true if are equal, false if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8h_a52d94c5f0adc7696faee1dc6f3b9b272}\label{test_8h_a52d94c5f0adc7696faee1dc6f3b9b272}} 
+\index{test.h@{test.h}!checkSolution@{checkSolution}}
+\index{checkSolution@{checkSolution}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{checkSolution()}{checkSolution()}}
+{\footnotesize\ttfamily bool check\+Solution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_solution}{Solution}}}]{correct\+Solution,  }\item[{\mbox{\hyperlink{struct_solution}{Solution}}}]{your\+Solution }\end{DoxyParamCaption})}
+
+Function for checking if solution that you give is correct 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em correct\+Solution} & \\
+\hline
+\mbox{\texttt{ in}}  & {\em your\+Solution} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool value, true if correct, false if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8h_a880b791700b8d6c3bea0e55fee649fde}\label{test_8h_a880b791700b8d6c3bea0e55fee649fde}} 
+\index{test.h@{test.h}!equationTest@{equationTest}}
+\index{equationTest@{equationTest}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{equationTest()}{equationTest()}}
+{\footnotesize\ttfamily void equation\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_test}{Test}}}]{test\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{number\+Of\+Tests }\end{DoxyParamCaption})}
+
+Main equation test function 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em test} & array with \mbox{\hyperlink{struct_test}{Test}} structures \\
+\hline
+\mbox{\texttt{ in}}  & {\em number\+Of\+Test} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_8h_a5e2f11ea62ea8e007d0431e31465bee2}\label{test_8h_a5e2f11ea62ea8e007d0431e31465bee2}} 
+\index{test.h@{test.h}!printTestResults@{printTestResults}}
+\index{printTestResults@{printTestResults}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{printTestResults()}{printTestResults()}}
+{\footnotesize\ttfamily void print\+Test\+Results (\begin{DoxyParamCaption}\item[{bool}]{passed,  }\item[{size\+\_\+t}]{test\+Number,  }\item[{\mbox{\hyperlink{struct_solution}{Solution}}}]{my\+Solution,  }\item[{\mbox{\hyperlink{struct_solution}{Solution}}}]{expected\+Solution }\end{DoxyParamCaption})}
+
+Function for printing test result 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em passed} & indicates if test passed or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em test\+Number} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{test_8h_a4e3254ec413da5406e1746c8428d319b}\label{test_8h_a4e3254ec413da5406e1746c8428d319b}} 
+\index{test.h@{test.h}!COLOR\_GREEN@{COLOR\_GREEN}}
+\index{COLOR\_GREEN@{COLOR\_GREEN}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_GREEN}{COLOR\_GREEN}}
+{\footnotesize\ttfamily const char$\ast$ COLOR\+\_\+\+GREEN = \char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}}
+
+\mbox{\Hypertarget{test_8h_a53e54caf6eb975dec77f33e016bdb722}\label{test_8h_a53e54caf6eb975dec77f33e016bdb722}} 
+\index{test.h@{test.h}!COLOR\_RED@{COLOR\_RED}}
+\index{COLOR\_RED@{COLOR\_RED}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_RED}{COLOR\_RED}}
+{\footnotesize\ttfamily const char$\ast$ COLOR\+\_\+\+RED = \char`\"{}\textbackslash{}033\mbox{[}1;31m\char`\"{}}
+
+\mbox{\Hypertarget{test_8h_a8a6d517e1ab192944bcbd1af463e7efd}\label{test_8h_a8a6d517e1ab192944bcbd1af463e7efd}} 
+\index{test.h@{test.h}!COLOR\_RESET@{COLOR\_RESET}}
+\index{COLOR\_RESET@{COLOR\_RESET}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{COLOR\_RESET}{COLOR\_RESET}}
+{\footnotesize\ttfamily const char$\ast$ COLOR\+\_\+\+RESET = \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
+

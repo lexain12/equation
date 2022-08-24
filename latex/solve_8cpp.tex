@@ -1,0 +1,57 @@
+\hypertarget{solve_8cpp}{}\doxysection{solve.\+cpp File Reference}
+\label{solve_8cpp}\index{solve.cpp@{solve.cpp}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}equation.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{solve_8cpp_a906f6dd503998cf02b22fb070e33e792}{find\+Discriminant}} (\mbox{\hyperlink{struct_coefficents}{Coefficents}} $\ast$coefficents)
+\item 
+int \mbox{\hyperlink{solve_8cpp_a156a0d6bfc9afc4f2ac1fb8a323a4295}{lineal\+Equation}} (\mbox{\hyperlink{struct_coefficents}{Coefficents}} $\ast$coefficents, \mbox{\hyperlink{struct_solution}{Solution}} $\ast$solution)
+\item 
+int \mbox{\hyperlink{solve_8cpp_a2cfc20112f75a528602713d0b54afee8}{quadratic\+Equation}} (\mbox{\hyperlink{struct_coefficents}{Coefficents}} $\ast$coefficents, \mbox{\hyperlink{struct_solution}{Solution}} $\ast$solution)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{solve_8cpp_a906f6dd503998cf02b22fb070e33e792}\label{solve_8cpp_a906f6dd503998cf02b22fb070e33e792}} 
+\index{solve.cpp@{solve.cpp}!findDiscriminant@{findDiscriminant}}
+\index{findDiscriminant@{findDiscriminant}!solve.cpp@{solve.cpp}}
+\doxysubsubsection{\texorpdfstring{findDiscriminant()}{findDiscriminant()}}
+{\footnotesize\ttfamily double find\+Discriminant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_coefficents}{Coefficents}} $\ast$}]{coefficents }\end{DoxyParamCaption})}
+
+Function that finds descriminant 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em coefficent} & structure with equation coefficents \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of dicriminant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{solve_8cpp_a156a0d6bfc9afc4f2ac1fb8a323a4295}\label{solve_8cpp_a156a0d6bfc9afc4f2ac1fb8a323a4295}} 
+\index{solve.cpp@{solve.cpp}!linealEquation@{linealEquation}}
+\index{linealEquation@{linealEquation}!solve.cpp@{solve.cpp}}
+\doxysubsubsection{\texorpdfstring{linealEquation()}{linealEquation()}}
+{\footnotesize\ttfamily int lineal\+Equation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_coefficents}{Coefficents}} $\ast$}]{coefficents,  }\item[{\mbox{\hyperlink{struct_solution}{Solution}} $\ast$}]{solution }\end{DoxyParamCaption})}
+
+Function that solves lineal equation 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em coefficent} & structure with equation coefficents \\
+\hline
+\mbox{\texttt{ in}}  & {\em solution} & structure with roots and number of roots \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{solve_8cpp_a2cfc20112f75a528602713d0b54afee8}\label{solve_8cpp_a2cfc20112f75a528602713d0b54afee8}} 
+\index{solve.cpp@{solve.cpp}!quadraticEquation@{quadraticEquation}}
+\index{quadraticEquation@{quadraticEquation}!solve.cpp@{solve.cpp}}
+\doxysubsubsection{\texorpdfstring{quadraticEquation()}{quadraticEquation()}}
+{\footnotesize\ttfamily int quadratic\+Equation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_coefficents}{Coefficents}} $\ast$}]{coefficents,  }\item[{\mbox{\hyperlink{struct_solution}{Solution}} $\ast$}]{solution }\end{DoxyParamCaption})}
+
+Function that solves quadratic equation 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em coefficent} & structure with equation coefficents \\
+\hline
+\mbox{\texttt{ in}}  & {\em solution} & structure with roots and number of roots \\
+\hline
+\end{DoxyParams}

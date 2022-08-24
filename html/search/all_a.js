@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['oneroot_0',['oneRoot',['../equation_8h.html#a4a3fa2132b655aa86d534ff95c287c8fac73256ab8a96bd2ae8a6977e170e65fb',1,'equation.h']]],
-  ['outputerror_1',['outputError',['../equation_8h.html#a8fb872c72e116bbd3eba31f48d78e76ba1c2d926cbe61428712be98ef558576ee',1,'equation.h']]]
+  ['printerror_0',['printError',['../equation_8h.html#a804aa5732301017e282bdf577dd0afd7',1,'printError(int status):&#160;utils.cpp'],['../utils_8cpp.html#a804aa5732301017e282bdf577dd0afd7',1,'printError(int status):&#160;utils.cpp']]],
+  ['printtestresults_1',['printTestResults',['../test_8cpp.html#a5e2f11ea62ea8e007d0431e31465bee2',1,'printTestResults(bool passed, size_t testNumber, Solution mySolution, Solution expectedSolution):&#160;test.cpp'],['../test_8h.html#a5e2f11ea62ea8e007d0431e31465bee2',1,'printTestResults(bool passed, size_t testNumber, Solution mySolution, Solution expectedSolution):&#160;test.cpp']]]
 ];
