@@ -9,42 +9,47 @@ void printError(int status)
   switch (status)
   {
     case inputError:
-      fprintf(stderr, "Ошибка: неправильный ввод");
+      fprintf(stderr, "Error: wrong input");
       break;
 
     case solveError:
-      fprintf(stderr, "Ошибка: произошла ошибка в ходе решения уравнения");
+      fprintf(stderr, "Error: error in equation solve");
       break;
 
     case outputError:
-      fprintf(stderr, "Ошибка: произошла ошибка во время вывод");
+      fprintf(stderr, "Error: output error");
       break;
 
     default:
-      assert(0);
+      fprintf(stderr, "Error: undefined error");
 
   }
 }
 
-bool isZero(double number)
+void inputCleaning()
 {
-  return fabs(number) < eps;
+    while (getchar() != '\n');
 }
 
-int coefficentReading(Coefficents *coefficents)
+bool isZero(double number)
 {
-  assert(coefficents != NULL);
+  return fabs(number) < EPS;
+}
 
-  printf("Введите коэффиценты уравнения ax^2 + bx + c = 0\n");
-  int numberOfCorrect = scanf("%lf %lf %lf", &coefficents->a, &coefficents->b, &coefficents->c);
+int coefficientInput(Coefficients *coefficients)
+{
+  assert(coefficients != NULL);
+
+  printf("Enter coefficients of equation ax^2 + bx + c = 0\n");
+  int numberOfCorrect = scanf("%lf %lf %lf", &coefficients->a, &coefficients->b, &coefficients->c);
 
   for (int i = 0; i < 5; i++)
   {
     if (numberOfCorrect < 3)
     {
-      printf("Неверный ввод, введите коэффиценты еще раз\n");
-      fflush(stdin);
-      scanf("%lf %lf %lf\n", &coefficents->a, &coefficents->b, &coefficents->c);
+      printf("Wrong input, enter coefficients again\n");
+      inputCleaning();
+      scanf("%lf %lf %lf\n", &coefficients->a, &coefficients->b, &coefficients->c);
     }
     else
       return noErrors;

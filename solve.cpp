@@ -3,21 +3,21 @@
 
 #include "equation.h"
 
-double findDiscriminant(Coefficents *coefficents)
+double evaluateDiscriminant(const Coefficients *coefficients)
 {
-  assert(coefficents != NULL); 
+  assert(coefficients != NULL);
 
-  return coefficents->b * coefficents->b - 4 * coefficents->a * coefficents->c;
+  return coefficients->b * coefficients->b - 4 * coefficients->a * coefficients->c;
 }
 
-int linealEquation(Coefficents *coefficents, Solution *solution)
+int solveLinealEquation(Coefficients *coefficients, Solution *solution)
 {
-  assert(coefficents != NULL);
+  assert(coefficients != NULL);
   assert(solution != NULL);
 
-  if (isZero(coefficents->b))
+  if (isZero(coefficients->b))
   {
-    if (isZero(coefficents->c))
+    if (isZero(coefficients->c))
     {
       solution->x1 = NAN;
       solution->x2 = NAN;
@@ -32,33 +32,33 @@ int linealEquation(Coefficents *coefficents, Solution *solution)
       return noErrors;
     }
   }
-  else 
+  else
   {
     solution->numberOfRoots = oneRoot;
-    solution->x1 = -(coefficents->c) / coefficents->b;
+    solution->x1 = -(coefficients->c) / coefficients->b;
     solution->x2 = NAN;
     return noErrors;
   }
   return solveError;
 }
 
-int quadraticEquation(Coefficents *coefficents, Solution *solution)
+int solveQuadraticEquation(Coefficients *coefficients, Solution *solution)
 {
-  assert(coefficents != NULL);
-  assert(solution != NULL);
+  assert(coefficients != NULL);
+  assert(solution     != NULL);
 
-  if (isZero(coefficents->a))
+  if (isZero(coefficients->a))
   {
-    linealEquation(coefficents, solution);
+    solveLinealEquation(coefficients, solution);
     return noErrors;
   }
 
-  double discriminant = findDiscriminant(coefficents);
+  double discriminant = evaluateDiscriminant(coefficients);
 
   if (isZero(discriminant))
   {
     solution->numberOfRoots = oneRoot;
-    solution->x1 = -(coefficents->b) / (2 * coefficents->a);
+    solution->x1 = -(coefficients->b) / (2 * coefficients->a);
     solution->x2 = NAN;
     return noErrors;
   }
@@ -72,8 +72,8 @@ int quadraticEquation(Coefficents *coefficents, Solution *solution)
   else if (discriminant > 0)
   {
     double sqrtDes = sqrt(discriminant);
-    solution->x1 = (-(coefficents->b) - sqrtDes)/ (2 * coefficents->a);
-    solution->x2 = (-(coefficents->b) + sqrtDes) / (2 * coefficents->a);
+    solution->x1 = (-(coefficients->b) - sqrtDes)/ (2 * coefficients->a);
+    solution->x2 = (-(coefficients->b) + sqrtDes) / (2 * coefficients->a);
     solution->numberOfRoots = twoRoots;
     return noErrors;
   }

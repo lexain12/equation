@@ -9,8 +9,8 @@ const char* COLOR_GREEN = "\033[32m";
 ///Structure for tests
 struct Test
 {
-    Coefficents coefficents = {};///<Test coefficents
-    Solution solution       = {};///<Correct solution
+    Coefficients coefficients = {};///<Test coefficients
+    Solution     solution     = {};///<Correct solution
 };
 
 

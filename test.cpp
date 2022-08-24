@@ -4,7 +4,7 @@
 
 int main()
 {
-    Test test[] =
+    Test tests[] =
     {
         {
             {
@@ -91,8 +91,8 @@ int main()
             }
         },
     };
-    size_t length = sizeof(test) / sizeof(Test);
-    equationTest(test, length) ;
+    size_t length = sizeof(tests) / sizeof(Test);
+    equationTest(tests, length);
 }
 
 bool areEqual(double num1, double num2)
@@ -102,11 +102,9 @@ bool areEqual(double num1, double num2)
 
 bool checkSolution(Solution correctSolution, Solution yourSolution)
 {
-   return  correctSolution.numberOfRoots == yourSolution.numberOfRoots
-           && ((   areEqual(correctSolution.x1, yourSolution.x1)
-                && areEqual(correctSolution.x2, yourSolution.x2))
-           || (    areEqual(correctSolution.x1, yourSolution.x2)
-                && areEqual(correctSolution.x2, yourSolution.x1)));
+   return correctSolution.numberOfRoots == yourSolution.numberOfRoots &&
+        ((areEqual(correctSolution.x1, yourSolution.x1) && areEqual(correctSolution.x2, yourSolution.x2))  ||
+         (areEqual(correctSolution.x1, yourSolution.x2) && areEqual(correctSolution.x2, yourSolution.x1)));
 }
 
 void printTestResults(bool passed, size_t testNumber, Solution mySolution, Solution expectedSolution)
@@ -123,14 +121,14 @@ void printTestResults(bool passed, size_t testNumber, Solution mySolution, Solut
     }
 }
 
-void equationTest(Test test[], size_t numberOfTests)
+void equationTest(Test tests[], size_t numberOfTests)
 {
     for (size_t i = 0; i < numberOfTests; i++)
     {
         Solution mySolution = {};
-        quadraticEquation(&(test[i].coefficents), &mySolution);
+        solveQuadraticEquation(&tests[i].coefficients, &mySolution);
 
-        printTestResults(checkSolution(test[i].solution, mySolution), i + 1, mySolution, test[i].solution);
+        printTestResults(checkSolution(tests[i].solution, mySolution), i + 1, mySolution, tests[i].solution);
     }
 }
 

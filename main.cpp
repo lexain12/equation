@@ -8,28 +8,28 @@ int main()
 {
   int status = noErrors;
 
-  Coefficents coefficents = {};
-  status = coefficentReading(&coefficents);
+  Coefficients coefficients = {};
+  status = coefficientInput(&coefficients);
   if (status)
   {
-    printError(status); 
+    printError(status);
     return EXIT_FAILURE;
-  } 
+  }
 
   Solution solution = {};
-  status = quadraticEquation(&coefficents, &solution);
+  status = solveQuadraticEquation(&coefficients, &solution);
   if (status)
   {
-    printError(status); 
+    printError(status);
     return EXIT_FAILURE;
-  } 
+  }
 
   status = answerOutput(&solution);
   if (status)
   {
-    printError(status); 
+    printError(status);
     return EXIT_FAILURE;
-  } 
+  }
 
   return 0;
 }

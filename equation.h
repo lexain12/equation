@@ -10,31 +10,32 @@ enum NumberOfRoots
   infRoots = -1,///< The equation have infinite number of roots
 };
 
-///Structure with coefficents of equation
-struct Coefficents 
+///Structure with coefficients of equation
+struct Coefficients
 {
   double a = NAN;///< cofficent of x^2
   double b = NAN;///< cofficent of x
-  double c = NAN;///< free coefficent
+  double c = NAN;///< free term
 };
 
-///Structure dsafasdf 
+///Structure with solution data
 struct Solution
 {
   double x1 = NAN;///< first root of equation
   double x2 = NAN;///< Second root of equation
   NumberOfRoots numberOfRoots = noRoots;///< Number of roots of the equation
 };
-/// enum with all erorrs
-enum Errors 
+
+/// enum with all errors
+enum Errors
 {
-  noErrors    = 0,///< programm has no errors
-  inputError  = 1,///< programm has error in coefficentReading function
-  solveError  = 2,///< programm has error in quadraticEquation or linealEquation functions 
-  outputError = 3,///< programm has error in answerOutput function 
+  noErrors    = 0,///< program has no errors
+  inputError  = 1,///< program has error in coefficentReading function
+  solveError  = 2,///< program has error in quadraticEquation or linealEquation functions
+  outputError = 3,///< program has error in answerOutput function
 };
 
-const double eps = 1e-10;
+const double EPS = 1e-7;
 
 
 /// Function that compares number with zero
@@ -43,38 +44,43 @@ const double eps = 1e-10;
 bool isZero(double number);
 
 ///Function that prints errors
-///\param [in] status status of programm 
+///\param [in] status status of programm
 void printError(int status);
 
 /**
- * Function that finds descriminant
- * \param [in] coefficent structure with equation coefficents
+ * Function that evaluate descriminant
+ * \param [in] coefficent structure with equation coefficients
  * \return value of dicriminant
  * */
-double findDiscriminant(Coefficents *coefficents);
+double evaluateDiscriminant(const Coefficients *coefficients);
+
+/**Function for cleaning input
+ * */
+void inputCleaning();
 
 /**
  * Function that reads coefficent from flow
- *\param [in] coefficent structure with equation coefficents
+ *\param [in] coefficent structure with equation coefficients
  * */
-int coefficentReading(Coefficents *coefficents);
+int coefficientInput(Coefficients *coefficients);
 
 /**
- * Function that solves lineal equation 
- * \param [in] coefficent structure with equation coefficents
+ * Function that solves lineal equation
+ * \param [in] coefficent structure with equation coefficients
  * \param [in] solution structure with roots and number of roots
  * */
-int linealEquation(Coefficents *coefficents, Solution *solution);
+int solveLinealEquation(Coefficients *coefficients, Solution *solution);
 
 /**
- * Function that solves quadratic equation 
- * \param [in] coefficent structure with equation coefficents
+ * Function that solves quadratic equation
+ * \param [in] coefficent structure with equation coefficients
  * \param [in] solution structure with roots and number of roots
  * */
-int quadraticEquation(Coefficents *coefficents, Solution *solution);
+int solveQuadraticEquation(Coefficients *coefficients, Solution *solution);
 
 /**
- * Function that prints solution in flow  
+ * Function that prints solution in flow
  * \param [in] solution structure with roots and number of roots
  * */
 int answerOutput(Solution *solution);
+
