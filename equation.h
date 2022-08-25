@@ -35,6 +35,14 @@ enum Errors
   outputError = 3, ///< program has error in answerOutput function
 };
 
+/// Enum with status of strIsEqualStatus
+enum functionStrIsEqualStatus 
+{
+  normalStatus = 0, ///< program in normal status
+  debugStatus = 1, ///< program runs tests
+  errorStatus = 2 ///< program have error
+};
+
 const double EPS = 1e-7;
 
 
@@ -84,3 +92,22 @@ int solveQuadraticEquation(Coefficients *coefficients, Solution *solution);
  * */
 int answerOutput(Solution *solution);
 
+/* Function that checks all arguments
+ * @param [in] numberOfArguments number of cmd arg
+ * @param [in] argumentsOfCmd array with cmd arguments
+ * @return its status
+ * **/
+functionStrIsEqualStatus checkArg(int numberOfArguments, char* argumentsOfCmd[]);
+
+/* Function that check if two strs is equal
+ * @param [in] rightString string with that you want to compare
+ * @param [in] yourString string that you want to compare
+ * @return bool
+ * **/
+bool strIsEqual(const char rightString[],char yourString[]);
+
+/* Function that starts right mode of program
+ * @param [in] isDebug 
+ * @return status of program
+ * **/
+int startProgramMode(functionStrIsEqualStatus isDebug);
