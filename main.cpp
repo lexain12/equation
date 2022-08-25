@@ -4,9 +4,6 @@
 
 #include "equation.h"
 
-bool strIsEqual(const char rightString[], char yourString[]);
-
-
 int main(int argc, char* argv[])
 {
   functionStrIsEqualStatus isDebug = checkArg(argc, argv);
