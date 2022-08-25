@@ -28,7 +28,7 @@ void printError(int status)
 
 void inputCleaning()
 {
-    while (getchar() != '\n');
+    while (getchar() != '\n') {;}
 }
 
 bool isZero(double number)

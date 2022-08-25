@@ -91,6 +91,7 @@ int main()
             }
         },
     };
+
     size_t length = sizeof(tests) / sizeof(Test);
     equationTest(tests, length);
 }

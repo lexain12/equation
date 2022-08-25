@@ -24,7 +24,7 @@ int solveLinealEquation(Coefficients *coefficients, Solution *solution)
       solution->numberOfRoots = infRoots;
       return noErrors;
     }
-    else
+    else  // c != 0
     {
       solution->x1 = NAN;
       solution->x2 = NAN;
@@ -32,13 +32,14 @@ int solveLinealEquation(Coefficients *coefficients, Solution *solution)
       return noErrors;
     }
   }
-  else
+  else    // b != 0
   {
     solution->numberOfRoots = oneRoot;
     solution->x1 = -(coefficients->c) / coefficients->b;
     solution->x2 = NAN;
     return noErrors;
   }
+
   return solveError;
 }
 
@@ -72,11 +73,12 @@ int solveQuadraticEquation(Coefficients *coefficients, Solution *solution)
   else if (discriminant > 0)
   {
     double sqrtDes = sqrt(discriminant);
-    solution->x1 = (-(coefficients->b) - sqrtDes)/ (2 * coefficients->a);
+    solution->x1 = (-(coefficients->b) - sqrtDes) / (2 * coefficients->a);
     solution->x2 = (-(coefficients->b) + sqrtDes) / (2 * coefficients->a);
     solution->numberOfRoots = twoRoots;
     return noErrors;
   }
+
   return solveError;
 }
 

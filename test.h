@@ -2,7 +2,7 @@
 
 #include "equation.h"
 
-const char* COLOR_RED = "\033[1;31m";
+const char* COLOR_RED   = "\033[1;31m";
 const char* COLOR_RESET = "\033[0m";
 const char* COLOR_GREEN = "\033[32m";
 

@@ -4,35 +4,35 @@
 /// Conditions of numberOfRoots
 enum NumberOfRoots
 {
-  noRoots   = 0,///< The equation doesn't have roots
-  oneRoot   = 1,///< The equation have 1 root
-  twoRoots  = 2,///< The equation have two roots
-  infRoots = -1,///< The equation have infinite number of roots
+  noRoots   = 0, ///< The equation doesn't have roots
+  oneRoot   = 1, ///< The equation have 1 root
+  twoRoots  = 2, ///< The equation have two roots
+  infRoots = -1, ///< The equation have infinite number of roots
 };
 
-///Structure with coefficients of equation
+/// Structure with coefficients of equation
 struct Coefficients
 {
-  double a = NAN;///< cofficent of x^2
-  double b = NAN;///< cofficent of x
-  double c = NAN;///< free term
+  double a = NAN; ///< cofficent of x^2
+  double b = NAN; ///< cofficent of x
+  double c = NAN; ///< free term
 };
 
-///Structure with solution data
+/// Structure with solution data
 struct Solution
 {
-  double x1 = NAN;///< first root of equation
-  double x2 = NAN;///< Second root of equation
-  NumberOfRoots numberOfRoots = noRoots;///< Number of roots of the equation
+  double x1 = NAN; ///< first root of equation
+  double x2 = NAN; ///< Second root of equation
+  NumberOfRoots numberOfRoots = noRoots; ///< Number of roots of the equation
 };
 
 /// enum with all errors
 enum Errors
 {
-  noErrors    = 0,///< program has no errors
-  inputError  = 1,///< program has error in coefficentReading function
-  solveError  = 2,///< program has error in quadraticEquation or linealEquation functions
-  outputError = 3,///< program has error in answerOutput function
+  noErrors    = 0, ///< program has no errors
+  inputError  = 1, ///< program has error in coefficentReading function
+  solveError  = 2, ///< program has error in quadraticEquation or linealEquation functions
+  outputError = 3, ///< program has error in answerOutput function
 };
 
 const double EPS = 1e-7;
